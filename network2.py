@@ -1,7 +1,14 @@
 '''
-Created on Oct 12, 2016
+Giovany Addun
+Steven Thompson
 
-@author: mwitt_000
+Changes:
++NetworkPacket class
+    -Extended the NetworkPacket class  so that NetworkPacket objects now have a "fragmented flag" and if fragmented, have an offset
+    -Added to_byte_s_frag() method to make fragmented bit string packets from larger transmissions
+    -Added is_fragment() method to determine whether an incoming packet is a fragment of a larger packet
++Host Class
+    -Modified udt_receive method to collect fragments until a full packet is received before
 '''
 import queue
 import threading

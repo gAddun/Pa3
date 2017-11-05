@@ -1,7 +1,14 @@
 '''
-Created on Oct 12, 2016
+Giovany Addun
+Steven Thompson
 
-@author: mwitt_000
++NetworkPacket class
+    -Further extended class so that objects also contain a src_addr
+        src_addr is used to determine routing
++Router class
+    -Extended Router class so that Router objects now have a routing table
+    -Implemented a route() method that looks up the proper outgoing interface for a transmission given a packet's dst_addr and src_addr
+    -Modified forward() method to call the route() method so that a packet is forwarded according to routing table
 '''
 import queue
 import threading
@@ -145,7 +152,7 @@ class Host:
                     #segment the transmission into chunks the size of the mtu
                     print(i)
                     pkt_segment = data_S[(i*mtu)-6:((i+1)*mtu)-6]
-                    pkt = NetworkPacket(dst_addr, pkt_segment)
+                    pkt = NetworkPacket(self.addr, dst_addr, pkt_segment)
                     #send the packet segment
                     self.out_intf_L[0].put(pkt.to_byte_S())
                     print('{}: sending packet {}'.format(self, pkt))

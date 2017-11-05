@@ -1,7 +1,10 @@
 '''
-Created on Oct 12, 2016
+Giovany Addun
+Steven Thompson
 
-@author: mwitt_000
+Changes:
+Modified Host class udt_send() method to check if the message is larger than the outgoing link's MTU
+if the message is longer, slices the message into MTU-sized transmissions
 '''
 import queue
 import threading

@@ -1,7 +1,9 @@
 '''
-Created on Oct 12, 2016
+Giovany Addun
+Steven Thompson
 
-@author: mwitt_000
+Changes:
+changed MTU for second link to 30
 '''
 import network2
 import link2

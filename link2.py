@@ -1,9 +1,10 @@
 '''
-Created on Oct 12, 2016
+Giovany Addun
+Steven Thompson
 
-@author: mwitt_000
+Changes:
+None
 '''
-
 import queue
 import threading
 

@@ -1,7 +1,13 @@
 '''
-Created on Oct 12, 2016
+Giovany Addun
+Steven Thompson
 
-@author: mwitt_000
+Changes:
+-Modified objects to reflect structure of network
+-Created rt, a routing table. Represented as a python dictionary where the keys are tuples of (src_addr, dst_addr)
+    rt is passed to routers at instantiation
+-Modified messages so that host_1 send traffic to host_3 and host_2 send traffic to host_4
+-Incerased simulation time
 '''
 import network3
 import link3
