@@ -152,7 +152,7 @@ class Host:
                     #segment the transmission into chunks the size of the mtu
                     print(i)
                     pkt_segment = data_S[(i*mtu)-6:((i+1)*mtu)-6]
-                    pkt = NetworkPacket(self.addr, dst_addr, pkt_segment)
+                    pkt = NetworkPacket(dst_addr, pkt_segment)
                     #send the packet segment
                     self.out_intf_L[0].put(pkt.to_byte_S())
                     print('{}: sending packet {}'.format(self, pkt))

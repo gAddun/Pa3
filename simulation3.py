@@ -49,14 +49,14 @@ if __name__ == '__main__':
     object_L.append(link_layer)
 
     # add all the links
-    link_layer.add_link(link3.Link(host_1, 0, router_a, 0, 50))
-    link_layer.add_link(link3.Link(host_2, 0, router_a, 1, 50))
-    link_layer.add_link(link3.Link(router_a, 0, router_b, 0, 50))
-    link_layer.add_link(link3.Link(router_a, 1, router_c, 0, 50))
-    link_layer.add_link(link3.Link(router_b, 0, router_d, 0, 50))
-    link_layer.add_link(link3.Link(router_c, 0, router_d, 1, 50))
-    link_layer.add_link(link3.Link(router_d, 0, host_3, 0, 50))
-    link_layer.add_link(link3.Link(router_d, 1, host_4, 0, 50))
+    link_layer.add_link(link3.Link(host_1, 0, router_a, 0, 90))
+    link_layer.add_link(link3.Link(host_2, 0, router_a, 1, 90))
+    link_layer.add_link(link3.Link(router_a, 0, router_b, 0, 90))
+    link_layer.add_link(link3.Link(router_a, 1, router_c, 0, 90))
+    link_layer.add_link(link3.Link(router_b, 0, router_d, 0, 90))
+    link_layer.add_link(link3.Link(router_c, 0, router_d, 1, 90))
+    link_layer.add_link(link3.Link(router_d, 0, host_3, 0, 90))
+    link_layer.add_link(link3.Link(router_d, 1, host_4, 0, 90))
 
     # start all the objects
     thread_L = []
