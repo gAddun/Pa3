@@ -79,10 +79,10 @@ if __name__ == '__main__':
 
     #send from host_1 to host_3
     mtu_into_network = link_layer.link_L[0].mtu
-    host_1.udt_send(3, "In the time of chimpanzees I was a monkey\nButane in my veins so I'm out to cut the junkie", mtu_into_network)
+    host_1.udt_send(3, "'Twas brillig, and the slithy toves.", mtu_into_network)
     #send from host_2 to host_4
     sleep(simulation_time)
-    host_2.udt_send(4, "'Twas brillig, and the slithy toves. Did gyre and gimble in the wabe", mtu_into_network)
+    host_2.udt_send(4, " Did gyre and gimble in the wabe", mtu_into_network)
     # give the network sufficient time to transfer all packets before quitting
     sleep(simulation_time)
 

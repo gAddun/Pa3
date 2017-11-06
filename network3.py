@@ -92,15 +92,16 @@ class NetworkPacket:
         dst_addr = ((byte_S[5:10]))
         dst_addr = int(dst_addr)
         data_S = byte_S[NetworkPacket.dst_addr_S_length:]
-        offset_size = 0
+        offset_size = 10
         while True:
             if((self.header_length+len(data_S[offset_size])>mtu)):
                 frag_flag=1
             else:
                 frag_flag=0
-            fragments.append(self(src_addr, dst_addr, data_S[offset_size:offset_size + mtu - self.header_length], frag_flag, offset_size))
+            pkt = NetworkPacket(byte_S[0:5], byte_S[5:10], byte_S[offset_size:offset_size + mtu - 12], flag=frag_flag, offset=offset_size )
+            fragments.append(pkt)
             offset_size = offset_size + mtu - self.header_length
-            if(len(data_S[offset_size:])==0):
+            if(len(byte_S[offset_size:])==0):
                 break
         return fragments
 
