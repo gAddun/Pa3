@@ -136,7 +136,7 @@ class Host:
             for i in range(0, scale):
                 #if this packet is the last segment
                 if(i==scale-1):
-                    pkt_segment = data_S[(i*mtu)-6:length]
+                    pkt_segment = data_S[10+(i*mtu)-6:length]
                     pkt = NetworkPacket(self.addr, dst_addr, pkt_segment)
                     # send the packet segment
                     self.out_intf_L[0].put(pkt.to_byte_S())
@@ -144,7 +144,7 @@ class Host:
                 elif(i==0):
                     # segment the transmission into chunks the size of the mtu
                     print(i)
-                    pkt_segment = data_S[(i * mtu):((i + 1) * mtu) - 6]
+                    pkt_segment = data_S[10+(i * mtu):10+((i + 1) * mtu) - 6]
                     pkt = NetworkPacket(self.addr, dst_addr, pkt_segment)
                     # send the packet segment
                     self.out_intf_L[0].put(pkt.to_byte_S())
@@ -152,7 +152,7 @@ class Host:
                 else:
                     #segment the transmission into chunks the size of the mtu
                     print(i)
-                    pkt_segment = data_S[(i*mtu)-6:((i+1)*mtu)-6]
+                    pkt_segment = data_S[10+(i*mtu)-6:10+((i+1)*mtu)-6]
                     pkt = NetworkPacket(dst_addr, pkt_segment)
                     #send the packet segment
                     self.out_intf_L[0].put(pkt.to_byte_S())
